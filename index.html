@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alarm App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="(min-width:450px)" href="style.css" />
+    <link rel="stylesheet" media="(max-width:449px)" href="style-u450.css" />
+  </head>
+
+  <body>
+    <div class="setter">
+      <form id="alarm-form">
+        <div class="select-time">
+          <div class="time">
+            <div
+              class="inc"
+              onclick="alter('h',1)"
+              ondblclick="alter('h',2)"
+            ></div>
+            <input
+              class="inp-time"
+              type="number"
+              name="hh"
+              id="hh"
+              min="1"
+              max="12"
+            />
+            <!-- <div class="inp-time" name="hh" id="hh">12</div> -->
+            <div
+              class="dec"
+              onclick="alter('h',-1)"
+              ondblclick="alter('h',-2)"
+            ></div>
+          </div>
+          <div class="txt">:</div>
+          <!-- <div class="inp-time">:</div> -->
+          <div class="time">
+            <div
+              class="inc"
+              onclick="alter('m',1)"
+              ondblclick="alter('m',2)"
+            ></div>
+            <input
+              class="inp-time"
+              type="number"
+              name="mm"
+              id="mm"
+              min="0"
+              max="59"
+            />
+            <div
+              class="dec"
+              onclick="alter('m',-1)"
+              ondblclick="alter('m',-2)"
+            ></div>
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="inp-time txt" id="meridian" onclick="alter( 'meri',0)">
+            AM
+          </div>
+        </div>
+        <input type="submit" class="button" id="add" value="Add Alarm" />
+      </form>
+    </div>
+    <div class="alarms-div">
+      <div id="recent">
+        <!-- <div id="alarm1" class="alarms">
+                <div class="toggle" id="toggle-1">
+                    <div class="toggle-switch" id="toggle-switch-1"></div>
+                </div>
+                <div class="time">12:36PM</div>
+                <div id="close1" class="close">&Cross;</div>
+            </div> -->
+      </div>
+      <div id="all-alarms"></div>
+    </div>
+    <div class="active-alarm-container">
+      <div class="active-alarm">
+        <div class="active-alarm-content">
+          <div class="select-time">
+            <div id="active-time">4:55 PM</div>
+          </div>
+          <div class="buttons">
+            <button class="button button-stop" id="stop">Stop</button>
+            <button class="button button-snooze">Snooze</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
